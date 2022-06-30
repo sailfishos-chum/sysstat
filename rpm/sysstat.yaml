@@ -1,0 +1,103 @@
+Name: sysstat
+Summary: Performance monitoring tools
+Version: 12.5.6
+Release: 1
+Group: Applications
+License: GPLv2
+URL: "http://sebastien.godard.pagesperso-orange.fr/"
+SCM: "https://github.com/sysstat/sysstat"
+Sources:
+    - '%{name}-%{version}.tar.gz'
+Description: |
+    Various utilities, common to many commercial Unixes, to monitor system
+    performance and usage activity.
+
+    This includes the cifsiostat, iostat, mpstat, pidstat, and tapestat tools.
+
+    See the "sa-tools"/"Sysstat Monitoring" package for long-term monitoring
+
+    %if "%{?vendor}" == "chum"
+    PackageName: Sysstat Tools
+    Type: console-application
+    PackagerName: nephros
+    Categories:
+     - System
+     - Utility
+    Custom:
+      Repo: "https://github.com/sysstat/sysstat"
+      PackagingRepo: "https://github.com/sailfishos-chum/sysstat"
+    Url:
+      Help: https://raw.githubusercontent.com/sysstat/sysstat/master/README.md
+    Screenshots:
+      - https://github.com/sysstat/sysstat/raw/master/images/color_output.png
+      - https://github.com/sysstat/sysstat/blob/master/images/cpugraph.jpg
+      - https://github.com/sysstat/sysstat/blob/master/images/iostat.png
+      - https://github.com/sysstat/sysstat/blob/master/images/loadavg-svg.png
+      - https://github.com/sysstat/sysstat/blob/master/images/tcgraph.png
+    %endif
+SetupOptions: -q -n %{name}-%{version}/upstream
+RpmLintIgnore:
+  - 'summary-too-long'
+  - 'no-changelogname-tag'
+  - 'invalid-url'
+#Macros:
+#  - 'foo;bar'
+#Patches:
+#  - 'baz'
+PkgConfigBR:
+    - systemd
+#Configure: none
+ConfigOptions:
+   - '--enable-copy-only'
+   - '--disable-file-attr'
+   - '--disable-documentation'
+   - '--enable-install-cron' # for systemd
+   - '--with-systemdsystemunitdir=%{_unitdir}'
+
+#Builder: none
+NoIconCache: true
+#BuildArch: noarch
+#AutoSubPackages:
+#  - doc
+RpmLintIgnore:
+  - 'no-changelogname-tag'
+Files:
+  - '%license COPYING'
+  - '%{_sysconfdir}/sysconfig/%{name}*'
+  - '%{_bindir}/cifsiostat'
+  - '%{_bindir}/iostat'
+  - '%{_bindir}/mpstat'
+  - '%{_bindir}/pidstat'
+  - '%{_bindir}/tapestat'
+
+SubPackages:
+    - Name:  sa-tools
+      Summary: Performance history tools
+      Group: Applications
+      Description: |
+          Tools you can schedule via systemd to collect and historize
+          performance and activity data.
+
+          This means the sadf sar and sadc tools, and corresponding systemd units.
+
+          %if "%{?vendor}" == "chum"
+          PackageName: Sysstat Monitoring
+          Type: console-application
+          PackagerName: nephros
+          Categories:
+           - System
+           - Utility
+          Custom:
+            Repo: "https://github.com/sysstat/sysstat"
+            PackagingRepo: "https://github.com/sailfishos-chum/sysstat"
+          Url:
+            Help: https://raw.githubusercontent.com/sysstat/sysstat/master/README.md
+          %endif
+      Files:
+        - '%{_unitdir}/*.service'
+        - '%{_unitdir}/*.timer'
+        # '%{_unitdir}/../systemd-sleep/*.sleep'
+        - '%{_bindir}/sadf'
+        - '%{_bindir}/sar'
+        - '%{_libdir}/sa/sa?'
+        - '%{_libdir}/sa/sadc'
