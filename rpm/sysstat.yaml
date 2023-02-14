@@ -3,7 +3,7 @@ Summary: Performance monitoring tools
 # CAREFUL!! upstream has even/odd stable/dev versioning scheme.
 # we probably always want the stable version.
 # check the URL for news.
-Version: 12.6.0
+Version: 12.6.2
 Release: 1
 Group: Applications
 License: GPLv2

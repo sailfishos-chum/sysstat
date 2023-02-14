@@ -9,7 +9,7 @@ Name:       sysstat
 # << macros
 
 Summary:    Performance monitoring tools
-Version:    12.6.0
+Version:    11.1.5
 Release:    1
 Group:      Applications
 License:    GPLv2
