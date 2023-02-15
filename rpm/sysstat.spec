@@ -9,7 +9,7 @@ Name:       sysstat
 # << macros
 
 Summary:    Performance monitoring tools
-Version:    11.1.5
+Version:    12.6.2
 Release:    1
 Group:      Applications
 License:    GPLv2
@@ -30,6 +30,8 @@ See the "sa-tools"/"Sysstat Monitoring" package for long-term monitoring
 %if "%{?vendor}" == "chum"
 PackageName: Sysstat Tools
 Type: console-application
+DeveloperName: Sebastien Godard
+DeveloperLogin: sysstat
 PackagerName: nephros
 Categories:
  - System
@@ -41,10 +43,11 @@ Url:
   Help: https://raw.githubusercontent.com/sysstat/sysstat/master/README.md
 Screenshots:
   - https://github.com/sysstat/sysstat/raw/master/images/color_output.png
-  - https://github.com/sysstat/sysstat/blob/master/images/cpugraph.jpg
-  - https://github.com/sysstat/sysstat/blob/master/images/iostat.png
-  - https://github.com/sysstat/sysstat/blob/master/images/loadavg-svg.png
-  - https://github.com/sysstat/sysstat/blob/master/images/tcgraph.png
+  - https://github.com/sysstat/sysstat/raw/master/images/cpugraph.jpg
+  - https://github.com/sysstat/sysstat/raw/master/images/iostat.png
+  - https://github.com/sysstat/sysstat/raw/master/images/loadavg-svg.png
+  - https://github.com/sysstat/sysstat/raw/master/images/tcgraph.png
+Donation: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=45U6F9R73ESFQ
 %endif
 
 
@@ -62,6 +65,8 @@ This means the sadf sar and sadc tools, and corresponding systemd units.
 %if "%{?vendor}" == "chum"
 PackageName: Sysstat Monitoring
 Type: console-application
+DeveloperName: Sebastien Godard
+DeveloperLogin: sysstat
 PackagerName: nephros
 Categories:
  - System
@@ -71,6 +76,7 @@ Custom:
   PackagingRepo: "https://github.com/sailfishos-chum/sysstat"
 Url:
   Help: https://raw.githubusercontent.com/sysstat/sysstat/master/README.md
+Donation: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=45U6F9R73ESFQ
 %endif
 
 
