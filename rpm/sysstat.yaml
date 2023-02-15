@@ -54,9 +54,10 @@ PkgConfigBR:
     - systemd
 #Configure: none
 ConfigOptions:
-   - 'CFLAGS="$RPM_OPT_FLAGS -fPIC -pie"'
-   - 'CXXFLAGS="$RPM_OPT_FLAGS -fPIC -pie"'
-   - 'LDFLAGS="$RPM_OPT_FLAGS -fPIC -pie"'
+   # PIE will not work, as libc is not compiled fPIC so static linking fails
+   # 'CFLAGS="$RPM_OPT_FLAGS -fPIC -pie"'
+   # 'CXXFLAGS="$RPM_OPT_FLAGS -fPIC -pie"'
+   # 'LDFLAGS="$RPM_OPT_FLAGS -fPIC -pie"'
    - '--disable-nls'
    - '--disable-lto'
    - '--disable-compress-manpg'

@@ -91,9 +91,6 @@ Donation: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4
 # << build pre
 
 %configure --disable-static \
-    CFLAGS="$RPM_OPT_FLAGS -fPIC -pie" \
-    CXXFLAGS="$RPM_OPT_FLAGS -fPIC -pie" \
-    LDFLAGS="$RPM_OPT_FLAGS -fPIC -pie" \
     --disable-nls \
     --disable-lto \
     --disable-compress-manpg \
