@@ -54,6 +54,12 @@ PkgConfigBR:
     - systemd
 #Configure: none
 ConfigOptions:
+   - 'CFLAGS="$RPM_OPT_FLAGS -fPIC -pie"'
+   - 'CXXFLAGS="$RPM_OPT_FLAGS -fPIC -pie"'
+   - 'LDFLAGS="$RPM_OPT_FLAGS -fPIC -pie"'
+   - '--disable-nls'
+   - '--disable-lto'
+   - '--disable-compress-manpg'
    - '--enable-copy-only'
    - '--disable-file-attr'
    - '--disable-documentation'
@@ -69,7 +75,7 @@ RpmLintIgnore:
   - 'no-changelogname-tag'
 Files:
   - '%license COPYING'
-  - '%{_sysconfdir}/sysconfig/%{name}*'
+  - '%config(noreplace) %{_sysconfdir}/sysconfig/%{name}*'
   - '%{_bindir}/cifsiostat'
   - '%{_bindir}/iostat'
   - '%{_bindir}/mpstat'

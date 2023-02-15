@@ -91,6 +91,12 @@ Donation: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4
 # << build pre
 
 %configure --disable-static \
+    CFLAGS="$RPM_OPT_FLAGS -fPIC -pie" \
+    CXXFLAGS="$RPM_OPT_FLAGS -fPIC -pie" \
+    LDFLAGS="$RPM_OPT_FLAGS -fPIC -pie" \
+    --disable-nls \
+    --disable-lto \
+    --disable-compress-manpg \
     --enable-copy-only \
     --disable-file-attr \
     --disable-documentation \
@@ -111,13 +117,12 @@ rm -rf %{buildroot}
 # >> install post
 rm -rf %{buildroot}%{_mandir}/*
 rm -rf %{buildroot}%{_unitdir}/../system-sleep/*.sleep
-#%%__install -m 644 -D %{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
 # << install post
 
 %files
 %defattr(-,root,root,-)
 %license COPYING
-%{_sysconfdir}/sysconfig/%{name}*
+%config(noreplace) %{_sysconfdir}/sysconfig/%{name}*
 %{_bindir}/cifsiostat
 %{_bindir}/iostat
 %{_bindir}/mpstat
