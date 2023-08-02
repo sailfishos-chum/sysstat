@@ -28,11 +28,11 @@ This includes the cifsiostat, iostat, mpstat, pidstat, and tapestat tools.
 See the "sa-tools"/"Sysstat Monitoring" package for long-term monitoring
 
 %if "%{?vendor}" == "chum"
-PackageName: Sysstat Tools
+Title: Sysstat Tools
 Type: console-application
 DeveloperName: Sebastien Godard
 DeveloperLogin: sysstat
-PackagerName: nephros
+PackagedBy: nephros
 Categories:
  - System
  - Utility
@@ -63,11 +63,11 @@ performance and activity data.
 This means the sadf sar and sadc tools, and corresponding systemd units.
 
 %if "%{?vendor}" == "chum"
-PackageName: Sysstat Monitoring
+Title: Sysstat Monitoring
 Type: console-application
 DeveloperName: Sebastien Godard
 DeveloperLogin: sysstat
-PackagerName: nephros
+PackagedBy: nephros
 Categories:
  - System
  - Utility
