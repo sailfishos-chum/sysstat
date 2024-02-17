@@ -9,11 +9,11 @@ Name:       sysstat
 # << macros
 
 Summary:    Performance monitoring tools
-Version:    12.6.2
+Version:    12.7.5
 Release:    1
 Group:      Applications
 License:    GPLv2
-URL:        http://sebastien.godard.pagesperso-orange.fr/
+URL:        https://sysstat.github.io
 Source0:    %{name}-%{version}.tar.gz
 Source100:  sysstat.yaml
 Source101:  sysstat-rpmlintrc
@@ -39,7 +39,7 @@ Categories:
 Custom:
   Repo: "https://github.com/sysstat/sysstat"
   PackagingRepo: "https://github.com/sailfishos-chum/sysstat"
-Url:
+Links:
   Help: https://raw.githubusercontent.com/sysstat/sysstat/master/README.md
 Screenshots:
   - https://github.com/sysstat/sysstat/raw/master/images/color_output.png
@@ -74,7 +74,7 @@ Categories:
 Custom:
   Repo: "https://github.com/sysstat/sysstat"
   PackagingRepo: "https://github.com/sailfishos-chum/sysstat"
-Url:
+Links:
   Help: https://raw.githubusercontent.com/sysstat/sysstat/master/README.md
 Donation: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=45U6F9R73ESFQ
 %endif

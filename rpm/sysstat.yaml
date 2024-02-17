@@ -3,12 +3,12 @@ Summary: Performance monitoring tools
 # CAREFUL!! upstream has even/odd stable/dev versioning scheme.
 # we probably always want the stable version.
 # check the URL for news.
-Version: 12.6.2
+Version: 12.7.5
 Release: 1
 Group: Applications
 License: GPLv2
-URL: "http://sebastien.godard.pagesperso-orange.fr/"
-SCM: "https://github.com/sysstat/sysstat"
+URL: https://sysstat.github.io
+SCM: https://github.com/sysstat/sysstat
 Sources:
     - '%{name}-%{version}.tar.gz'
 Description: |
@@ -31,7 +31,7 @@ Description: |
     Custom:
       Repo: "https://github.com/sysstat/sysstat"
       PackagingRepo: "https://github.com/sailfishos-chum/sysstat"
-    Url:
+    Links:
       Help: https://raw.githubusercontent.com/sysstat/sysstat/master/README.md
     Screenshots:
       - https://github.com/sysstat/sysstat/raw/master/images/color_output.png
@@ -105,7 +105,7 @@ SubPackages:
           Custom:
             Repo: "https://github.com/sysstat/sysstat"
             PackagingRepo: "https://github.com/sailfishos-chum/sysstat"
-          Url:
+          Links:
             Help: https://raw.githubusercontent.com/sysstat/sysstat/master/README.md
           Donation: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=45U6F9R73ESFQ
           %endif
